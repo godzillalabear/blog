@@ -1,0 +1,7 @@
+I"Ä<p class="message">
+  <img src="https://imgur.com/REzkQDa" />
+</p>
+
+<p>To make pages show up in the sidebar, add <code class="highlighter-rouge">sidebar_link: true</code> to the front
+matter.</p>
+:ET
