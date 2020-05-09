@@ -5,6 +5,7 @@ sidebar_link: true
 ---
 
 <p class="message">
+	我秋人啦！
   <img src="https://i.imgur.com/nMZD3Ag.jpg">
 </p>
 
