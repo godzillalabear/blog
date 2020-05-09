@@ -3,9 +3,9 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            'The End of the World'
+title:            'End of My World'
 tagline:          'A Jekyll theme'
-description:      'All good things come to an end...'
+description:      'All good and bad things come to an end'
 url:              https://godzillalabear.github.io
 baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
