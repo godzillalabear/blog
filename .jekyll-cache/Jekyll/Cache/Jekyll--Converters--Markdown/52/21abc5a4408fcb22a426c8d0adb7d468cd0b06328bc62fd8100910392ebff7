@@ -1,0 +1,287 @@
+I"=<p>本篇懶人包：</p>
+<blockquote>
+  <p>在 JavaScript 中，像是 map 這種可以把函式當參數傳進函式中運用的函式叫做「高級函式」，如果想要傳進去的參數而不是直接執行的話就要寫成 <code class="highlighter-rouge">[1, 2, 3, 4, 5].map(addOne)</code> ，而不是 <code class="highlighter-rouge">[1, 2, 3, 4, 5].map(addOne(num))</code> ，後面這種寫法會讓 addOne 這個函式在 map 被執行前先執行完，而不是對前面的陣列作用。</p>
+</blockquote>
+
+<p>在 JavaScript 中，<code class="highlighter-rouge">map()</code> 函式可以將陣列中的每個元素丟到 callback function做計算，這樣就不需要用迴圈了，超方便的！</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">new_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">new_array</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>  
+</code></pre></div></div>
+<p>你看！只要一行就好了！</p>
+
+<p>但方便之前，要先來看看怎麼用。
+從<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/map">MDN</a>的說明來看使用方法，</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">new_array</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span> <span class="nx">currentValue</span><span class="p">[,</span> <span class="nx">index</span><span class="p">[,</span> <span class="nx">array</span><span class="p">]])</span> <span class="p">{</span>
+    <span class="c1">// return element for new_array</span>
+<span class="p">}[,</span> <span class="nx">thisArg</span><span class="p">])</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="highlighter-rouge">map</code> 函式會把回傳給一個新的陣列，所以我們可以用 <code class="highlighter-rouge">new_array</code> 來接這個回傳值</li>
+  <li>執行 <code class="highlighter-rouge">map</code> 函式時，他會呼叫裡面的 callback function ，這個 callback function 會對 <code class="highlighter-rouge">arr</code> 中的<strong>元素</strong>作用。在這裡要注意的是，callback function 只會對裡面的一個一個元素作用，就好像 <code class="highlighter-rouge">map</code> 函式已經自帶 for 迴圈一樣，所以我們在寫 callback function 的時候只要在乎我們對單一元素想要做的變化就好。</li>
+  <li>使用方法裡面的 <code class="highlighter-rouge">[]</code> 非必填欄位。已 callback function 來說，第一個填進去的參數代表 currentValue，如果你不想處理整個陣列，可以填入第二個參數，代表 index。如果你想要處理二維陣列，那你就可以在參數填入陣列 ^^</li>
+  <li><code class="highlighter-rouge">{}</code> 中寫的就是 callback function 的內容</li>
+</ol>
+
+<p>依照上面的使用方法，我們可以寫出這樣的程式碼</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">new_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">func</span><span class="p">(</span><span class="nx">i</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">new_array</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>在 JavaScript 中，有命名函式 <code class="highlighter-rouge">function funcABC(a){}</code> ，也有匿名函式 <code class="highlighter-rouge">function(a){}</code>，更有箭號函式 <code class="highlighter-rouge">() =&gt; {}</code> （好像小學照樣照句 www ），所以我們的 callback function 也可以用箭號函式寫：</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>如果參數只有一個可以省略小括弧，如果函式內容只有一行，那就可以省略花括號，所以就可以寫成我們最一開始的樣子，這時 <code class="highlighter-rouge">i + 1</code> 就成為我們的回傳值</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>除了上述幾種寫法（已經好多種了），還有一種是把 callback function 定義在函式外面：</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addOne</span><span class="p">(</span><span class="nx">num</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">addOne</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>什麼？為什麼現在 function 放那邊可以不用加參數在後面？
+這是我一開始一直搞不清楚的疑問。
+在 JavaScript 中，像是 map 這種可以把函式當參數傳進函式中運用的函式叫做「高級函式」，如果想要傳進去的參數而不是直接執行的話就要寫成 <code class="highlighter-rouge">[1, 2, 3, 4, 5].map(addOne)</code> ，而不是 <code class="highlighter-rouge">[1, 2, 3, 4, 5].map(addOne(num))</code> ，後面這種寫法會讓 addOne 這個函式在 map 被執行前先執行完，而不是對前面的陣列<code class="highlighter-rouge">[1, 2, 3, 4 ,5]</code>作用。像這種把函式當成參數丟入另外一個函式，是在 functional programming 中才能做到的事喔！</p>
+
+<h1 id="header-one">Header one</h1>
+
+<h2 id="header-two">Header two</h2>
+
+<h3 id="header-three">Header three</h3>
+
+<h4 id="header-four">Header four</h4>
+
+<h5 id="header-five">Header five</h5>
+
+<h6 id="header-six">Header six</h6>
+
+<h2 id="blockquotes">Blockquotes</h2>
+
+<p>Single line blockquote:</p>
+
+<blockquote>
+  <p>Stay hungry. Stay foolish.</p>
+</blockquote>
+
+<p>Multi line blockquote with a cite reference:</p>
+
+<blockquote>
+  <p>People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things.</p>
+</blockquote>
+
+<p class="small"><cite>Steve Jobs</cite> — Apple Worldwide Developers’ Conference, 1997</p>
+
+<h2 id="tables">Tables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Salary</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">John Doe</a></td>
+      <td>$1</td>
+      <td>Because that’s all Steve Jobs needed for a salary.</td>
+    </tr>
+    <tr>
+      <td><a href="#">Jane Doe</a></td>
+      <td>$100K</td>
+      <td>For all the blogging she does.</td>
+    </tr>
+    <tr>
+      <td><a href="#">Fred Bloggs</a></td>
+      <td>$100M</td>
+      <td>Pictures are worth a thousand words, right? So Jane × 1,000.</td>
+    </tr>
+    <tr>
+      <td><a href="#">Jane Bloggs</a></td>
+      <td>$100B</td>
+      <td>With hair like that?! Enough said.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Header1</th>
+      <th style="text-align: center">Header2</th>
+      <th style="text-align: right">Header3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">cell1</td>
+      <td style="text-align: center">cell2</td>
+      <td style="text-align: right">cell3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">cell4</td>
+      <td style="text-align: center">cell5</td>
+      <td style="text-align: right">cell6</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td style="text-align: left">cell1</td>
+      <td style="text-align: center">cell2</td>
+      <td style="text-align: right">cell3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">cell4</td>
+      <td style="text-align: center">cell5</td>
+      <td style="text-align: right">cell6</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td style="text-align: left">Foot1</td>
+      <td style="text-align: center">Foot2</td>
+      <td style="text-align: right">Foot3</td>
+    </tr>
+  </tfoot>
+</table>
+
+<h2 id="definition-lists">Definition Lists</h2>
+
+<dl>
+  <dt>Definition List Title</dt>
+  <dd>Definition list division.</dd>
+  <dt>Startup</dt>
+  <dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd>
+  <dt>#dowork</dt>
+  <dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd>
+  <dt>Do It Live</dt>
+  <dd>I’ll let Bill O’Reilly <a href="https://www.youtube.com/watch?v=O_HyZ5aW76c" title="We'll Do It Live">explain</a> this one.</dd>
+</dl>
+
+<h2 id="unordered-lists-nested">Unordered Lists (Nested)</h2>
+
+<ul>
+  <li>List item one
+    <ul>
+      <li>List item one
+        <ul>
+          <li>List item one</li>
+          <li>List item two</li>
+          <li>List item three</li>
+          <li>List item four</li>
+        </ul>
+      </li>
+      <li>List item two</li>
+      <li>List item three</li>
+      <li>List item four</li>
+    </ul>
+  </li>
+  <li>List item two</li>
+  <li>List item three</li>
+  <li>List item four</li>
+</ul>
+
+<h2 id="ordered-list-nested">Ordered List (Nested)</h2>
+
+<ol>
+  <li>List item one
+    <ol>
+      <li>List item one
+        <ol>
+          <li>List item one</li>
+          <li>List item two</li>
+          <li>List item three</li>
+          <li>List item four</li>
+        </ol>
+      </li>
+      <li>List item two</li>
+      <li>List item three</li>
+      <li>List item four</li>
+    </ol>
+  </li>
+  <li>List item two</li>
+  <li>List item three</li>
+  <li>List item four</li>
+</ol>
+
+<h2 id="address-element">Address element</h2>
+
+<address>
+  1 Infinite Loop<br /> Cupertino, CA 95014<br /> United States
+</address>
+
+<h2 id="anchor-element-aka-link">Anchor element (aka. Link)</h2>
+
+<p>This is an example of a <a href="http://apple.com" title="Apple">link</a>.</p>
+
+<h2 id="abbreviation-element">Abbreviation element</h2>
+
+<p>The abbreviation <abbr title="Cascading Style Sheets">CSS</abbr> stands for “Cascading Style Sheets”.</p>
+
+<h2 id="cite-element">Cite element</h2>
+
+<p>“Code is poetry.” —<cite>Automattic</cite></p>
+
+<h2 id="code-element">Code element</h2>
+
+<p>You will learn later on in these tests that <code class="highlighter-rouge">word-wrap: break-word;</code> will be your best friend.</p>
+
+<h2 id="strike-element">Strike element</h2>
+
+<p>This element will let you <strike>strikeout text</strike>.</p>
+
+<h2 id="emphasize-element">Emphasize element</h2>
+
+<p>The emphasize element should <em>italicize</em> text.</p>
+
+<h2 id="insert-element">Insert element</h2>
+
+<p>This element should denote <ins>inserted</ins> text.</p>
+
+<h2 id="keyboard-element">Keyboard element</h2>
+
+<p>This scarcely known element emulates <kbd>keyboard text</kbd>, which is usually styled like the <code class="highlighter-rouge">&lt;code&gt;</code> element.</p>
+
+<h2 id="preformatted-element">Preformatted element</h2>
+
+<p>This element styles large blocks of code.</p>
+
+<pre>
+.post-title {
+	margin: 0 0 5px;
+	font-weight: bold;
+	font-size: 38px;
+	line-height: 1.2;
+	and here's a line of some really, really, really, really long text, just to see how the PRE element handles it and to find out how it overflows;
+}
+</pre>
+
+<h2 id="quote-element">Quote element</h2>
+
+<p><q>Developers, developers, developers…</q> –Steve Ballmer</p>
+
+<h2 id="strong-element">Strong element</h2>
+
+<p>This element shows <strong>bold text</strong>.</p>
+
+<h2 id="subscript-element">Subscript element</h2>
+
+<p>Getting our science styling on with H<sub>2</sub>O, which should push the “2” down.</p>
+
+<h2 id="superscript-element">Superscript element</h2>
+
+<p>Still sticking with science and Isaac Newton’s E = MC<sup>2</sup>, which should lift the 2 up.</p>
+
+<h2 id="variable-element">Variable element</h2>
+
+<p>This allows you to denote <var>variables</var>.</p>
+:ET

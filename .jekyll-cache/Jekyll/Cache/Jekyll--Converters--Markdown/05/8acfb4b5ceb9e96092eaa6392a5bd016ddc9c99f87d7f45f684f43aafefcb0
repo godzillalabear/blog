@@ -1,0 +1,6 @@
+I"
+<p>本篇懶人包：</p>
+<blockquote>
+  <p>在 JavaScript 中，像是 map 這種可以把函式當參數傳進函式中運用的函式叫做「高級函式」，如果想要傳進去的參數而不是直接執行的話就要寫成 <code class="highlighter-rouge">[1, 2, 3, 4, 5].map(addOne)</code> ，而不是 <code class="highlighter-rouge">[1, 2, 3, 4, 5].map(addOne(num))</code> ，後面這種寫法會讓 addOne 這個函式在 map 被執行前先執行完，而不是對前面的陣列作用。</p>
+</blockquote>
+:ET
