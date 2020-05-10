@@ -3,7 +3,7 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            '邊開火 邊放火'
+title:            '邊開火    邊放火'
 tagline:          'Fire and motion'
 description:      'All good and bad things come to an end'
 url:              https://godzillalabear.github.io
