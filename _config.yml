@@ -3,9 +3,9 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            '邊開火    邊放火'
-tagline:          'Fire and motion'
-description:      'All good and bad things come to an end'
+title:            '邊開火  |  邊放火'
+tagline:          'A Jekyll theme'
+description:      'Fire and motion'
 url:              https://godzillalabear.github.io
 baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
