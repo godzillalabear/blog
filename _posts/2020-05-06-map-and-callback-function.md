@@ -3,7 +3,7 @@ layout: post
 title: "淺談 JS map() 與 callback function"
 sub_title: "The common elements"
 categories:
-  - Markup
+  - JavaScript
 elements:
   - content
   - css

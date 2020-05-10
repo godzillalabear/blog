@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-10T14:15:41+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">邊開火  |  邊放火</title><subtitle>Fire and motion</subtitle><author><name>哥吉拉拉熊</name></author><entry><title type="html">淺談 JS map() 與 callback function</title><link href="http://localhost:4000/markup/2020/05/06/map-and-callback-function.html" rel="alternate" type="text/html" title="淺談 JS map() 與 callback function" /><published>2020-05-06T00:00:00+08:00</published><updated>2020-05-10T12:56:45+08:00</updated><id>http://localhost:4000/markup/2020/05/06/map-and-callback-function</id><content type="html" xml:base="http://localhost:4000/markup/2020/05/06/map-and-callback-function.html">&lt;p&gt;本篇懶人包：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-10T15:38:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">邊開火  |  邊放火</title><subtitle>Fire and motion</subtitle><author><name>哥吉拉拉熊</name></author><entry><title type="html">要如何寫一篇英文演講稿</title><link href="http://localhost:4000/english/2020/05/10/how-to-do-a-english-speach.html" rel="alternate" type="text/html" title="要如何寫一篇英文演講稿" /><published>2020-05-10T00:00:00+08:00</published><updated>2020-05-11T04:36:22+08:00</updated><id>http://localhost:4000/english/2020/05/10/how-to-do-a-english-speach</id><content type="html" xml:base="http://localhost:4000/english/2020/05/10/how-to-do-a-english-speach.html">&lt;p&gt;在母親節的午餐時間收到前家教學生的訊息，問我可不可以幫高中生寫一篇一分半的英文演講稿，內容是關於新冠肺炎對於生活的影響。我想對於在台灣這樣的 &lt;del&gt;填鴨式&lt;/del&gt; 學校英文教育出來的學生，這是一個天大的難題吧！機會難得，就來寫篇文章講講如何寫講稿吧！&lt;/p&gt;
+
+&lt;p&gt;寫講稿其實跟寫英文作文截然不同，你可以放很多語助詞，你可以把句子寫的短短的，你可以說： I see people on the street. They are all wearing mask. 而不是， I see people who wear mask on the street. 所以忘掉名詞子句、形容詞子句、副詞子句都沒有關係，用最簡單的句子來說話，對聽的人來說也是最簡單的。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=8S0FDjFBj8o&quot;&gt;How to sound smart in your TEDx Talk  Will Stephen  TEDxNewYork - YouTube&lt;/a&gt;
+Youtube 上有個點閱很高的 TED Talk （別擔心，他有中文字幕^^），標題看起來是在教你如何讓別人覺得你很會演講，實際上裡面都在搞笑，但在看更仔細一點，他描述了很多演講的小技巧，學起來受用無窮。&lt;/p&gt;
+
+&lt;p&gt;演講的一開始你可以向觀眾提問，讓問題引導觀眾到你的主題。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Do you think coronavirus has changed your life a lot?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;你可以簡單描述一下現況，例如我現在上學都要戴口罩，進教室都要量體溫。
+然後你可以說個可愛的故事吸引大家注意。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Last month I saw a news about checking body temperature. A man walked in a police office. The police officer had alcohol in his left hand and a forehead thermometer in another had. He asked to take the man’s temperature.  Then he raised his left hand in front of the man’s forehead and sprayed alcohol right into his eyes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;接下來，你可以放一張藥師辛苦發口罩的照片給大家看。
+[image:C2A571C4-13B1-4E85-B457-762D8C83A6FE-6253-0002D22CE13C3A67/20200308003377.jpg]
+圖片來源：&lt;a href=&quot;https://www.chinatimes.com/realtimenews/20200308003366-260405?chdtv&quot;&gt;口罩地圖有這缺點！藥師被謾罵淚訴：不發號碼牌了 - 生活 - 中時電子報&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a picture of people lining up to buy masks. Since the outbreak, it’s not easy to buy masks in a pharmacy.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;同時，數字是吸引觀眾最好的方式。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you don’t believe me. Let’s look at these numbers. This is a real thing that happens right now.
+The coronavirus has infected more the 4 million people in the world and has caused two hundred and eighty thousand deaths.
+People needed to spend 30~60 minutes to buy masks. For people in other countries, they might not  have any masks left.
+With your mask on, the possibility you get infected has lower 50%.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;數字永遠都是說明情況最簡單明瞭的方法。如果需要，你也可以用一些圖表來支持你的想法。&lt;/p&gt;
+
+&lt;p&gt;最後你可以下個結論，說說新冠肺炎帶給你生活的改變。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I form a habit of washing my hand every time I get back home. I wear mask and check my temperature every. And I buy things online more often. Online shopping is such a black hole.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;寫英文講稿其實不用太拘謹，文法不會也沒有關係，反正快快講過去，也沒有人注意你時態有沒有用錯。&lt;/p&gt;
+
+&lt;p&gt;參考資料：&lt;a href=&quot;https://www.worldometers.info/&quot;&gt;Worldometer - real time world statistics&lt;/a&gt;&lt;/p&gt;</content><author><name>哥吉拉拉熊</name></author><summary type="html">在母親節的午餐時間收到前家教學生的訊息，問我可不可以幫高中生寫一篇一分半的英文演講稿，內容是關於新冠肺炎對於生活的影響。我想對於在台灣這樣的 填鴨式 學校英文教育出來的學生，這是一個天大的難題吧！機會難得，就來寫篇文章講講如何寫講稿吧！</summary></entry><entry><title type="html">淺談 JS map() 與 callback function</title><link href="http://localhost:4000/javascript/2020/05/06/map-and-callback-function.html" rel="alternate" type="text/html" title="淺談 JS map() 與 callback function" /><published>2020-05-06T00:00:00+08:00</published><updated>2020-05-10T12:56:45+08:00</updated><id>http://localhost:4000/javascript/2020/05/06/map-and-callback-function</id><content type="html" xml:base="http://localhost:4000/javascript/2020/05/06/map-and-callback-function.html">&lt;p&gt;本篇懶人包：&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;在 JavaScript 中，像是 map 這種可以把函式當參數傳進函式中運用的函式叫做「高級函式」，如果想要傳進去的參數而不是直接執行的話就要寫成 &lt;code class=&quot;highlighter-rouge&quot;&gt;[1, 2, 3, 4, 5].map(addOne)&lt;/code&gt; ，而不是 &lt;code class=&quot;highlighter-rouge&quot;&gt;[1, 2, 3, 4, 5].map(addOne(num))&lt;/code&gt; ，後面這種寫法會讓 addOne 這個函式在 map 被執行前先執行完，而不是對前面的陣列作用。&lt;/p&gt;
 &lt;/blockquote&gt;
