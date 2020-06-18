@@ -18,6 +18,7 @@ last_modified_at: 2020-06-18T16:46:17-57:34
 做過 `git init` 的專案， git 就可以幫你做版本控制，這種帶有一個`.git`資料夾跟其他檔案的工作目錄可以叫做 working directory，但其實還有另外一種沒有工作目錄的儲存庫 — bare repository （裸儲存庫）。一個 bare repository 就好像單純的 `.git` 資料夾一樣，他存了經過 git 計算與壓縮後的比對結果，commit 紀錄等等。
 
 ![](https://i.imgur.com/OIEUL7V.png)
+
 一個經過 `git --bare init` 的資料夾會自己生出這些東西。需要注意的是，一般慣例上來說，bare repo 的資料夾名稱會以 `.git` 結尾。
 
 那什麼時候該用裸儲存庫，什麼時候該用一般的儲存庫呢？

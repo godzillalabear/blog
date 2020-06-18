@@ -1,0 +1,3 @@
+I"*<p>除了平常 <code class="highlighter-rouge">git init</code> 之後可以建立一個 git repository 之外，你知道 <code class="highlighter-rouge">git --bare init </code> 會發生什麼事嗎？
+首先，我們先來聊聊 bare repository 跟平常的 repository 有什麼差別吧！</p>
+:ET
