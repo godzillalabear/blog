@@ -255,7 +255,7 @@ a svg, .icon svg { height: 1em; }
 
 code, pre { font-family: Menlo, Monaco, "Courier New", monospace; }
 
-code { background-color: #f9f9f9; border-radius: 3px; color: #bf616a; font-size: 85%; padding: 0.25em 0.5em; }
+code { background-color: #f9f9f9; border-radius: 3px; color: #bf616a; font-size: 85%; padding: 0.25em 0.5em; word-break: break-word; }
 
 pre { margin-bottom: 1rem; margin-top: 0; max-width: 100%; overflow-x: auto; }
 
