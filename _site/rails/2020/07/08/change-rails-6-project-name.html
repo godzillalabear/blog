@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      我想要換名字！！— Rails 6 專案改名 &middot; 邊開火  |  邊放火
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/dinosaur_shadow.png" />
+<link rel="shortcut icon" href="/dinosaur_shadow.ico" />
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+</head>
+
+
+  <body class="post">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        邊開火  |  邊放火
+      </a>
+    </div>
+    <p class="lead">Fire and motion</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+    <a class="home-link "
+        href="/">Home</a>
+  
+  
+
+  
+
+  
+
+
+  
+
+  
+    
+      <a class="page-link "
+          href="/about.html">About</a>
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+
+<a href="https://drive.google.com/file/d/1DpBxF_29__1BSlfIf0QhY8VQnyRDJX3K/view?usp=sharing">Résemé</a>
+</nav>
+
+
+  
+
+
+  <p>
+  &copy; 2020.
+  <a href="/LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+    <main class="container">
+      <header>
+  <h1 class="post-title">我想要換名字！！— Rails 6 專案改名</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">08 Jul 2020</span>
+  <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        Rails
+      
+    
+  </span>
+</div>
+
+
+  <div class="post-body">
+    <p>要想出一個好的專案名稱真的好難，前陣子 Demo Day 專案的名稱也為了取名問題卡很久，為了不浪費時間，先 new 了一個專案，後來才想到好名字，想要改名的時候，卻怕漏改東西，該怎麼辦才好呢？</p>
+
+<p>在網路上搜尋 <strong>rails 專案改名</strong>的相關關鍵字，通常第一個就會叫你裝套件 <a href="https://github.com/morshedalam/rename">rename</a>，但這些文章通常都年代久遠，而且這個套件也已經三年沒更新了。
+在舊的版本的 Rails 專案中，專案中很多 class 都有專案名稱作為 namespace 在前面，像是這樣：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#config/routes.rb</span>
+<span class="no">MyProject</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>當我們要修改專案名稱時，就需要一個一個改很麻煩，所以才會需要 rename 這個套件，但到了 Rails 6，這些東西都被改成下面這樣了：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#config/routes.rb</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>所以現在專案裡面也不會有太多跟 my_project 有關的東西了！</p>
+
+<p>那這樣有什麼東西需要改呢？
+第一個就是專案最上層的資料夾名稱了！我們除了可以透過本來作業系統的圖形化介面改資料夾名稱外，我們也可以透過終端機執行</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❯ <span class="nb">mv </span>my_project better_name
+</code></pre></div></div>
+
+<p>除了專案的最上層資料夾名稱外，我們可以在終端機下指令去尋找專案資料夾底下所有檔案有沒有跟專案名稱一樣的內容</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❯ <span class="nb">grep</span> <span class="nt">-ri</span> <span class="nt">--exclude-dir</span><span class="o">={</span>node_modules,public,log,tmp<span class="o">}</span> <span class="s1">'my.*project'</span> <span class="nb">.</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">grep 關鍵字 路徑</code> 這個指令可以尋找檔案或資料夾裡面有沒有符合關鍵字的部分，<code class="highlighter-rouge">-r</code> 可以往下層資料夾每一層都找，<code class="highlighter-rouge">-i</code> 是不在乎關鍵字的大小寫，而關鍵字也可以用正規表達式來寫。以專案名稱 my_project 來說，在 Rails 專案裡面，可能會變成 MyProject 這樣的形式，所以我們的正規表達式要寫成 <code class="highlighter-rouge">'my.*project’</code>，<code class="highlighter-rouge">.*</code> 代表零到多個任意字元。在 Rails 6 專案中，<code class="highlighter-rouge">node_modules</code> 與 <code class="highlighter-rouge">public</code> 分別存放我們需要用的套件跟 webpack 打包的檔案，而 <code class="highlighter-rouge">log</code> 紀錄我們程序執行的過程，<code class="highlighter-rouge">tmp</code> 資料夾中放的是暫存檔案，上述的 4 個資料夾內容都很多而且跟專案名稱不會有太大的關係，所以我們利用 <code class="highlighter-rouge">--exclude-dir={node_modules,public,log,tmp}</code> 來排除他們，讓搜尋這件事不會浪費資源做太久。</p>
+
+<p>下完指令就可以看到終端機告訴我們哪些檔案中有內容需要改名囉！</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./app/views/layouts/application.html.erb:    &lt;title&gt;MyProject&lt;/title&gt;
+./config/cable.yml:  channel_prefix: my_project_production
+./config/application.rb:module MyProject
+./config/database.yml:  database: my_project_development
+./config/database.yml:  database: my_project_test
+./config/database.yml:  database: my_project_production
+./package.json:  <span class="s2">"name"</span>: <span class="s2">"my_project"</span>,
+</code></pre></div></div>
+
+<p>一一去修改這些檔案中有專案名字的部分，就不會漏掉東西少改了！
+最最重要一定要記得改的是 <code class="highlighter-rouge">./app/views/layouts/application.html.erb</code> 中的標題，因為這會顯示在瀏覽器上方的標題，另外一個要記得改的是 <code class="highlighter-rouge">./config/application.rb</code> 中的 module 名稱喔～</p>
+
+<p>到了 Rails 6 ，我們可以發現其實改名要修改的東西真的不多，很簡單。這樣以後就算 <code class="highlighter-rouge">rails new</code> 下錯名字也不用擔心了！</p>
+
+<p>參考資料：</p>
+<ol>
+  <li><a href="http://www.adamscott.io/blog/2014/01/21/renaming-a-ruby-on-rails-application/">Renaming a Ruby on Rails Application - Adam Scott</a></li>
+  <li><a href="https://stackoverflow.com/questions/15591791/effectively-renaming-a-rails-project">refactoring - Effectively Renaming a Rails Project - Stack Overflow</a></li>
+  <li><a href="https://github.com/morshedalam/rename">GitHub - morshedalam/rename: To rename rails application</a></li>
+</ol>
+
+    
+
+
+
+<div class="post-tags">
+  
+</div>
+  </div>
+
+  
+  <!-- <section class="comments">
+    <h2>Comments</h2>
+    
+  <p>
+    You are seeing this because your Disqus shortname is not properly set. To
+    configure Disqus, you should edit your <code>_config.yml</code> to include
+    either a <code>disqus.shortname</code> variable.
+  </p>
+
+  <p>
+    If you do not wish to use Disqus, override the
+    <code>comments.html</code> partial for this theme.
+  </p>
+
+
+  </section> -->
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/git/2020/06/18/what-is-a-bare-repo.html">
+            什麼是 bare repo?
+            <small>18 Jun 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/english/2020/05/10/how-to-do-a-english-speach.html">
+            要如何寫一篇英文演講稿
+            <small>10 May 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/javascript/2020/05/09/map-and-callback-function.html">
+            淺談 JS map() 與 callback function
+            <small>09 May 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>
